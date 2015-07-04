@@ -65,6 +65,7 @@ if $NODEJS
 then
 	echo "installing NodeJS"
 	install NodeJS nodejs
+	install NPM npm
 fi
 
 if $JAVA_ORACLE
@@ -85,6 +86,7 @@ then
 	mv apache-tomcat-8.0.23 /opt/tomcat
 	if ! [ -L /opt/tomcat/webapps ];
 	then
+		echo "configuring Tomcat webapps symlink folder"
  		rm -rf /opt/tomcat/webapps
   		ln -fs /vagrant/tomcat-webapps /opt/tomcat/webapps
 	fi
@@ -215,6 +217,7 @@ then
 	install Apache apache2
 	if ! [ -L /var/www ];
 	then
+		echo "configuring Apache's www symlink folder"
  		rm -rf /var/www
   		ln -fs /vagrant/apache-www /var/www
 	fi
@@ -225,4 +228,4 @@ fi
 # Needed for docs generation.
 update-locale LANG=en_US.UTF-8 LANGUAGE=en_US.UTF-8 LC_ALL=en_US.UTF-8
 
-echo 'all set, rock on!'
+echo 'Configuration Done.'
