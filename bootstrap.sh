@@ -23,8 +23,8 @@ MYSQL=true
 PHP=true
 
 # Variables
-RUBY_VERSION=2.2.2
-RAILS_VERSION=4.2.1
+RUBY_VERSION=2.3.0
+RAILS_VERSION=4.2.5.1
 DB_USER=root
 DB_PASSWORD=root
 RBENV_DIR=~/.rbenv
@@ -66,6 +66,7 @@ then
 	echo "installing NodeJS"
 	install NodeJS nodejs
 	install NPM npm
+	npm install npm -g
 fi
 
 if $JAVA_ORACLE
